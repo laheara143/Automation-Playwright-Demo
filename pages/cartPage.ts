@@ -4,7 +4,7 @@ export class CartPage {
     constructor(private page: Page) {}
 
     async verifyItemInCart(itemName: string) {
-        await expect (this.page.locator('.inventory_item_name')).toContainText(itemName);
+        await expect (this.page.locator('.inventory_item_name', { hasText: itemName})).toBeVisible();
     }
 
     async removeItem(itemName: string) {
@@ -13,6 +13,12 @@ export class CartPage {
 
     async verifyCartEmpty() {
         await expect (this.page.locator('.cart_item')).toHaveCount(0);
-    }  
+    } 
     
+    async verifyCartAmount(itemCount: number) {
+        await expect (this.page.locator('.cart_item')).toHaveCount(itemCount, {
+        timeout: 5000
+
+       });
+    }     
 }
