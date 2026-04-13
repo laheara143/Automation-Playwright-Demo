@@ -42,13 +42,11 @@ test('Navigate to page, Log In, Add Items, Checkout', async ({page}) => {
     await checkoutPage.fillCheckoutInfo('Tester', 'Test', '12345');
 
     //Go to overview page and verify price
-    await expect (page).toHaveURL(/checkout-step-two.html/);
-    await expect (page.locator('[data-test="title"]')).toHaveText('Checkout: Overview');
-    await expect (page.locator('[data-test="total-label"]')).toHaveText('Total: $43.18');
+    await checkoutPage.verifyOverviewPage();
 
     //Confirm order and verify completion page
     await checkoutPage.finishCheckout();
-    await expect (page).toHaveURL(/checkout-complete.html/);
+    await checkoutPage.verifyCompletionPage();
 
     //Screenshot to verify Test Results
     await page.screenshot({ path: 'screenshots/order-completion-page.png' });
