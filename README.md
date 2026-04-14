@@ -18,3 +18,7 @@ This project is an e2e test automation framework that was built using Playwright
 ## How To Run Tests
 ```bash
 npx playwright test
+
+## Screenshots
+![Cart Page](screenshots/orderCompletionPage.png)
+

@@ -49,7 +49,7 @@ test('Navigate to page, Log In, Add Items, Checkout', async ({page}) => {
     await checkoutPage.verifyCompletionPage();
 
     //Screenshot to verify Test Results
-    await page.screenshot({ path: 'screenshots/order-completion-page.png' });
+    await page.screenshot({ path: 'screenshots/orderCompletionPage.png' });
 
 
 });

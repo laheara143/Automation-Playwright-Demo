@@ -25,7 +25,7 @@ test.describe('Locked Out User cannot sign in and recieves an error message', ()
         await expect (page.locator('[data-test="error"]')).toHaveText('Epic sadface: Sorry, this user has been locked out.');
 
         //Screenshot to verify Test Results
-        await page.screenshot({ path: 'screenshots/after-login-attempt.png' });
+        await page.screenshot({ path: 'screenshots/negativeLogin.png' });
     });
 
 

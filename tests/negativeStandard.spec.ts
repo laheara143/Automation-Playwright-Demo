@@ -43,7 +43,7 @@ test('Navigate to page, Log In, Add Items, Remove Items and verify Cart Badge', 
     await cartPage.verifyCartEmpty();
 
     //Screenshot to verify Test Results
-    await page.screenshot({ path: 'screenshots/removed-items.png' });
+    await page.screenshot({ path: 'screenshots/verifyRemovedItems.png' });
 
 
 });
